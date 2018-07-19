@@ -3,7 +3,7 @@
 Business IT Project from University of Hamburg (Autors: Oleksandr Trunov, Kim-Morgaine Lohse, Jan Eric Friedrich)
 
 
-##Getting started
+## Getting started
 
 **Dependencies:**
 1. numpy
