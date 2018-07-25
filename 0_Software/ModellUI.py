@@ -1,7 +1,17 @@
-import tkinter as tk
-import ModelValue
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon May 14 22:08:31 2018
 
-class ModelUI:
+@author: Kim, Eric, Oleksandr
+"""
+
+# Required Python Packages
+import tkinter as tk
+import ModellValue
+
+# Creates Enter-UI
+class ModellUI:
 
     def __init__(self):
         # Values for drop lists
@@ -222,31 +232,31 @@ class ModelUI:
         drop.config(width=30)
 
     def updateValues(self):
-        ModelValue.enter_age_value = self.enter_age.get()
-        ModelValue.enter_index_new_customer_value = self.enter_index_new_customer.get()
-        ModelValue.enter_primary_index_value = self.enter_primary_index.get()
-        ModelValue.enter_type_adresse_value = self.enter_type_adresse.get()
-        ModelValue.enter_Income_value = self.enter_Income.get()
-        ModelValue.enter_Month_of_transaction_value = self.enter_Month_of_transaction.get()
-        ModelValue.enter_employee_value = self.enter_employee.get()
-        ModelValue.enter_country_value = self.enter_country.get()
-        ModelValue.enter_sex_value = self.enter_sex.get()
-        ModelValue.enter_indrel_value = self.enter_indrel.get()
-        ModelValue.enter_relationship_value = self.enter_relationship.get()
-        ModelValue.enter_type_country_value = self.enter_type_country.get()
-        ModelValue.enter_type_home_value = self.enter_type_home.get()
-        ModelValue.enter_canal_value = self.enter_canal.get()
-        ModelValue.enter_region_value = self.enter_region.get()
-        ModelValue.enter_segment_value = self.enter_segment.get()
-        ModelValue.enter_index_activity_value = self.enter_index_activity.get()
-        ModelValue.enter_seniority = self.enter_seniority_index.get()
-        ModelValue.enter_Last_date_prime = self.enter_Last_date_prime.get()
-        ModelValue.CSV_db = self.CSV_db.get()
-        ModelValue.CSV_head = self.CSV_head.get()
-        ModelValue.enter_test_size = self.test_size.get()
-        ModelValue.enter_random_state = self.random_state.get()
-        ModelValue.enter_produkt = self.enter_product.get()
-        ModelValue.enter_typ_model = self.enter_type_model.get()
+        ModellValue.enter_age_value = self.enter_age.get()
+        ModellValue.enter_index_new_customer_value = self.enter_index_new_customer.get()
+        ModellValue.enter_primary_index_value = self.enter_primary_index.get()
+        ModellValue.enter_type_adresse_value = self.enter_type_adresse.get()
+        ModellValue.enter_Income_value = self.enter_Income.get()
+        ModellValue.enter_Month_of_transaction_value = self.enter_Month_of_transaction.get()
+        ModellValue.enter_employee_value = self.enter_employee.get()
+        ModellValue.enter_country_value = self.enter_country.get()
+        ModellValue.enter_sex_value = self.enter_sex.get()
+        ModellValue.enter_indrel_value = self.enter_indrel.get()
+        ModellValue.enter_relationship_value = self.enter_relationship.get()
+        ModellValue.enter_type_country_value = self.enter_type_country.get()
+        ModellValue.enter_type_home_value = self.enter_type_home.get()
+        ModellValue.enter_canal_value = self.enter_canal.get()
+        ModellValue.enter_region_value = self.enter_region.get()
+        ModellValue.enter_segment_value = self.enter_segment.get()
+        ModellValue.enter_index_activity_value = self.enter_index_activity.get()
+        ModellValue.enter_seniority = self.enter_seniority_index.get()
+        ModellValue.enter_Last_date_prime = self.enter_Last_date_prime.get()
+        ModellValue.CSV_db = self.CSV_db.get()
+        ModellValue.CSV_head = self.CSV_head.get()
+        ModellValue.enter_test_size = self.test_size.get()
+        ModellValue.enter_random_state = self.random_state.get()
+        ModellValue.enter_produkt = self.enter_product.get()
+        ModellValue.enter_typ_model = self.enter_type_model.get()
 
     def drawButton(self):
         self.button = tk.Button(self.window, text="Save Values", command=self.updateValues)

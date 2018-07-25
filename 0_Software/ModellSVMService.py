@@ -11,7 +11,8 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
 from sklearn.preprocessing import StandardScaler
 
-class ModelSVMService:
+# Model SVM (ready but not deployed)
+class ModellSVMService:
     def __init__ (self, train_features, train_target, test_features, prediction_vector):
         #Global Variables
         self.classifier

@@ -16,9 +16,10 @@ from sklearn.model_selection import RandomizedSearchCV
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 from sklearn.cross_validation import cross_val_score
-import ModelValue
+import ModellValue
 
-class ModelRandomForestService ():
+# Model Random Forest with random and full CrossValidation
+class ModellRandomForestService():
     def __init__(self, train_features, train_target, test_feature, test_target, model_type, features, prediction_vector):
         if model_type is "Random_Forest":
             self.gridSearchRandomForest(RandomForestClassifier(), train_features, train_target)
@@ -48,9 +49,9 @@ class ModelRandomForestService ():
         self.prediction_test = self.classifier.predict(test_features)
         self.prediction_product = self.classifier.predict(prediction_vector)
         if self.prediction_product[0] == 0:
-            ModelValue.prediktionResult = "will buy"
+            ModellValue.prediktionResult = "will buy"
         elif  self.prediction_product[1] == 1:
-            ModelValue.prediktionResult = "will not buy"
+            ModellValue.prediktionResult = "will not buy"
 
     def gridSearchRandomForest (self, classifier, train_features, train_target):
         parameters = [{'n_estimators': [15], 'max_features': [15, 20, 25, 30, 35, 'auto', 'sqrt', 'log2'], 'max_depth': [15, 20, 25], 'bootstrap': [True, False]},
@@ -102,7 +103,7 @@ class ModelRandomForestService ():
         accuracies = cross_val_score(estimator=self.classifier, X=train_features, y=train_target, cv=10, n_jobs=-1)
         k_Fold_accur = accuracies.mean()
         variance = abs(accuracies.std())
-        ModelValue.trainAccuracy = accuracy_score(train_target, prediction_train)
-        ModelValue.testAccuracy = accuracy_score(test_target, prediction_test)
-        ModelValue.confusionMatrix = confusion_matrix(test_target, prediction_test)
-        ModelValue.crossValidation = "Mean accuracy (train) :: %s \nVariance :: %s" %(str(k_Fold_accur), str(variance))
+        ModellValue.trainAccuracy = accuracy_score(train_target, prediction_train)
+        ModellValue.testAccuracy = accuracy_score(test_target, prediction_test)
+        ModellValue.confusionMatrix = confusion_matrix(test_target, prediction_test)
+        ModellValue.crossValidation = "Mean accuracy (train) :: %s \nVariance :: %s" % (str(k_Fold_accur), str(variance))

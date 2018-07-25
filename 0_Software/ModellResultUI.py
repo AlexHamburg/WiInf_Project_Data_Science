@@ -1,7 +1,17 @@
-import tkinter as tk
-import ModelValue
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon May 14 23:08:31 2018
 
-class ModelResultUI:
+@author: Kim, Eric, Oleksandr
+"""
+
+# Required Python Packages
+import tkinter as tk
+import ModellValue
+
+# creat UI with results
+class ModellResultUI:
     def __init__(self):
         self.createWindow()
         self.createTextFields()
@@ -74,44 +84,44 @@ class ModelResultUI:
 
     def createResultFields(self):
 
-        lable_UI = tk.Label(self.window, text=str(ModelValue.trainAccuracy), fg="black", bg="#e6e6e6")
+        lable_UI = tk.Label(self.window, text=str(ModellValue.trainAccuracy), fg="black", bg="#e6e6e6")
         lable_UI.config(font=("Arial", 10))
         lable_UI.grid(row=2, column=3, sticky="w")
 
-        lable_UI = tk.Label(self.window, text=str(ModelValue.testAccuracy), fg="black", bg="#e6e6e6")
+        lable_UI = tk.Label(self.window, text=str(ModellValue.testAccuracy), fg="black", bg="#e6e6e6")
         lable_UI.config(font=("Arial", 10))
         lable_UI.grid(row=3, column=3, sticky="w")
 
-        lable_UI = tk.Label(self.window, text=str(ModelValue.testAccuracy), fg="black", bg="#e6e6e6")
+        lable_UI = tk.Label(self.window, text=str(ModellValue.testAccuracy), fg="black", bg="#e6e6e6")
         lable_UI.config(font=("Arial", 10))
         lable_UI.grid(row=3, column=3, sticky="w")
 
-        lable_UI = tk.Label(self.window, text=ModelValue.confusionMatrix[0][0], fg="black", bg="#e6e6e6", justify="center")
+        lable_UI = tk.Label(self.window, text=ModellValue.confusionMatrix[0][0], fg="black", bg="#e6e6e6", justify="center")
         lable_UI.config(font=("Arial", 10))
         lable_UI.grid(row=7, column=6, sticky="w")
 
-        lable_UI = tk.Label(self.window, text=ModelValue.confusionMatrix[1][0], fg="black", bg="#e6e6e6", justify="center")
+        lable_UI = tk.Label(self.window, text=ModellValue.confusionMatrix[1][0], fg="black", bg="#e6e6e6", justify="center")
         lable_UI.config(font=("Arial", 10))
         lable_UI.grid(row=8, column=6, sticky="w")
 
-        lable_UI = tk.Label(self.window, text=ModelValue.confusionMatrix[0][1], fg="black", bg="#e6e6e6", justify="center")
+        lable_UI = tk.Label(self.window, text=ModellValue.confusionMatrix[0][1], fg="black", bg="#e6e6e6", justify="center")
         lable_UI.config(font=("Arial", 10))
         lable_UI.grid(row=7, column=7, sticky="w")
 
-        lable_UI = tk.Label(self.window, text=ModelValue.confusionMatrix[1][1], fg="black", bg="#e6e6e6", justify="center")
+        lable_UI = tk.Label(self.window, text=ModellValue.confusionMatrix[1][1], fg="black", bg="#e6e6e6", justify="center")
         lable_UI.config(font=("Arial", 10))
         lable_UI.grid(row=8, column=7, sticky="w")
 
-        lable_UI = tk.Label(self.window, text="Client " + ModelValue.prediktionResult, fg="black", bg="#e6e6e6", justify="left")
+        lable_UI = tk.Label(self.window, text="Client " + ModellValue.prediktionResult, fg="black", bg="#e6e6e6", justify="left")
         lable_UI.config(font=("Arial", 10, "bold"))
         lable_UI.grid(row=10, column=3, sticky="w", columnspan = 6, rowspan = 1)
 
-        lable_UI = tk.Label(self.window, text=ModelValue.crossValidation, fg="black", bg="#e6e6e6", justify ="left")
+        lable_UI = tk.Label(self.window, text=ModellValue.crossValidation, fg="black", bg="#e6e6e6", justify ="left")
         lable_UI.config(font=("Arial", 10, "bold"))
         lable_UI.grid(row=12, column=3, sticky="w", columnspan = 9, rowspan = 3)
 
-        lable_UI = tk.Label(self.window, text="%s hr. %s min. %s sec." %(str(ModelValue.diffHr), str(ModelValue.diffMin),
-                                                                                       str(ModelValue.diffSec)), fg="black", bg="#e6e6e6", justify ="left")
+        lable_UI = tk.Label(self.window, text="%s hr. %s min. %s sec." %(str(ModellValue.diffHr), str(ModellValue.diffMin),
+                                                                         str(ModellValue.diffSec)), fg="black", bg="#e6e6e6", justify ="left")
         lable_UI.config(font=("Arial", 10, "bold"))
         lable_UI.grid(row=15, column=3, sticky="w")
 

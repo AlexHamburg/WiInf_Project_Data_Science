@@ -5,10 +5,12 @@ Created on Mon May 14 23:08:31 2018
 
 @author: Kim, Eric, Oleksandr
 """
-from ModelWerkzeug import ModelWerkzeug
+
+# Required Python Packages
+from ModellWerkzeug import ModellWerkzeug
 
 def main():
-    ModelWerkzeug()
+    ModellWerkzeug()
 
 if __name__ == "__main__":
     main()

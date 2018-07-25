@@ -1,3 +1,4 @@
+# persistent
 
 enter_age_value = 0
 enter_index_new_customer_value = 0

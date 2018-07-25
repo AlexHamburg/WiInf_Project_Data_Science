@@ -5,15 +5,17 @@ Created on Mon May 14 22:08:31 2018
 
 @author: Kim, Eric, Oleksandr
 """
-from ModelRandomForestService import ModelRandomForestService
-from ModelSVMService import ModelSVMService
+
 # Required Python Packages
+from ModellRandomForestService import ModelRandomForestService
+from ModellSVMService import ModelSVMService
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import time
-import ModelValue
+import ModellValue
 
-class ModelService():
+# Read and clean data from .csv file
+class ModellService():
     def __init__(self, name_of_csv, name_of_new_head, test_size, random_state, name_of_product,
                  model_type, prediction_vector):
 
@@ -61,18 +63,18 @@ class ModelService():
                                                 self.X, prediction_vector)
             self.X_train_after = self.X_train
             self.X_test_after = self.X_test
-            self.result = ModelValue.prediktionResult
-            self.trainAccuracy = ModelValue.trainAccuracy
-            self.testAccuracy = ModelValue.testAccuracy
-            self.confusionMatrix = ModelValue.confusionMatrix
-            self.crossValidation = ModelValue.crossValidation
+            self.result = ModellValue.prediktionResult
+            self.trainAccuracy = ModellValue.trainAccuracy
+            self.testAccuracy = ModellValue.testAccuracy
+            self.confusionMatrix = ModellValue.confusionMatrix
+            self.crossValidation = ModellValue.crossValidation
 
         self.after = time.time()
         try:
             self.estimateTimeDiff(self.befor, self.after)
-            ModelValue.diffHr = self.hr
-            ModelValue.diffMin = self.min
-            ModelValue.diffSec = self.sec
+            ModellValue.diffHr = self.hr
+            ModellValue.diffMin = self.min
+            ModellValue.diffSec = self.sec
         finally:
             pass
 
